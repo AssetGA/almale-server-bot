@@ -1,4 +1,4 @@
-import { sendMessage } from "../telegraf";
+const { sendMessage } = require("../telegraf");
 
 module.exports = async (req, res) => {
   res.setHeader("Access-Control-Allow-Origin", "*");
@@ -19,9 +19,9 @@ module.exports = async (req, res) => {
   const { name, phone, email, message } = req.query;
 
   const getInfo = await sendMessage(
-    `Имя ${name} почта ${email}, phone ${
+    `Имя заказчика ${name} почта ${email}, номер телефона ${
       "https://wa.me/8" + phone
-    }, сообщение= ${message}`
+    }, сообщение: ${message}`
   );
   res.send(getInfo);
 };
