@@ -10,10 +10,18 @@ module.exports = async (req, res) => {
     "Access-Control-Allow-Headers",
     "Origin, X-Requested-With, Content-Type, Accept"
   );
+
+  // Если это запрос OPTIONS, отвечаем на него сразу
+  if (req.method === "OPTIONS") {
+    res.status(200).end(); // Останавливаем обработку для preflight
+    return;
+  }
   const { name, phone, email, message } = req.query;
 
   const getInfo = await sendMessage(
-    `My name ${name} I want ${type}, phone ${"https://wa.me/8" + phone}`
+    `Имя ${name} почта ${email}, phone ${
+      "https://wa.me/8" + phone
+    }, сообщение= ${message}`
   );
   res.send(getInfo);
 };
