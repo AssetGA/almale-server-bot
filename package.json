@@ -1,0 +1,27 @@
+{
+  "name": "almale-server",
+  "version": "1.0.0",
+  "description": "bot-almale",
+  "main": "api/index.js",
+  "scripts": {
+    "start": "cross-env NODE_ENV=production node api/index.js",
+    "dev": "cross-env NODE_ENV=development nodemon api/index.js"
+  },
+  "keywords": [],
+  "author": "Asset",
+  "license": "ISC",
+  "dependencies": {
+    "chalk": "^4.1.0",
+    "config": "^3.3.11",
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.5",
+    "express": "^4.18.2",
+    "jsonwebtoken": "^9.0.2",
+    "punycode": "^2.3.1"
+  },
+  "devDependencies": {
+    "@babel/eslint-parser": "^7.25.8",
+    "cross-env": "^7.0.3",
+    "nodemon": "^3.1.0"
+  }
+}
