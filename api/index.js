@@ -10,6 +10,7 @@ module.exports = async (req, res) => {
     "Access-Control-Allow-Headers",
     "Origin, X-Requested-With, Content-Type, Accept"
   );
+  // fbgf
 
   // Если это запрос OPTIONS, отвечаем на него сразу
   if (req.method === "OPTIONS") {
